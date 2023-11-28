@@ -1,3 +1,23 @@
+<?php
+
+function Conectar(){
+
+    $server = "localhost";
+    $user = "root";
+    $password = "";
+    $db = "ekopublicidad";
+    
+    $conexion = new mysql($server,$user,$password,$db);
+
+    if($conexion->connect_errno){
+        die("Conexión Fallida" . $conexion->connect_errno);
+    }
+    else{
+        echo "Conectado";
+        
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,6 +40,47 @@
         <a class="navegación_enlace" href="facturación.php">Facturación</a>
         <a class="navegación_enlace" href="producto.php">Producto</a>
     </nav>
+    <form action="procesar_cotizacion.php" method="POST">
+    <!-- Aquí van tus elementos de entrada -->
+    <p>ID cotización</p>
+    <p><input type="text" name="idCotizacion" value="" size="20" maxlength="20"></p>
+    <!-- Otros campos... -->
+
+    <p>Producto</p>
+    <select name="idProducto">
+        <!-- Opciones de productos desde la base de datos -->
+        <?php
+        // Conexión a la base de datos (debes incluir este código)
+        Conectar();
+
+        // Verificar la conexión
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
+        }
+
+        // Consulta para obtener los productos
+        $query = "SELECT idProducto, nombre FROM producto";
+        $result = $conexion->query($query);
+
+        // Mostrar opciones
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value='" . $row['idProducto'] . "'>" . $row['nombre'] . "</option>";
+        }
+
+        // Cerrar conexión
+        $conexion->close();
+        ?>
+    </select>
+
+    <!-- Otros campos... -->
+
+    <p>Fecha de vencimiento</p>
+    <p><input type="date" name="fechaVencimiento" value="" size="20" maxlength="20"></p>
+
+    <p>
+        <input type="submit" value="Ingresar">
+    </p>
+</form>
     <p>Ingrese una cotización</p>
     <p>ID cotización</p>
     <p><input type="text" name="Id cotización"  value="Id cotización" size="20" maxlength="20"></p>
