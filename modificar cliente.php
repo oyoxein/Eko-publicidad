@@ -21,15 +21,18 @@
     <p><input type="text" name="teléfono" value="teléfono" size="20" maxlength="20"></p>
     <p>Email</p>
     <p><input type="text" name="email" value="email" size="20" maxlength="20"></p>
-    <p>
-        <input type="reset" value="Regresar">
-    </p>
-    <p>
-        <input type="reset" value="Modificar">
-    </p>
-    <p>
-        <input type="submit" value="Eliminar">
-    </p>    
+    <div>
+      <button>
+        <p>
+          <span>Regresar</span>
+        </p>
+      </button>
+      <button>
+        <p>
+          <span>Modificar</span>
+        </p>
+      </button>
+    </div>
 
 </body>
 </html>

@@ -15,12 +15,20 @@
     <p><input type="text" name="Id factura"  value="Id factura" size="20" maxlength="20"></p>
     <p>ID Cliente</p>
     <p><input type="text" name="Id cliente" value="Id cliente" size="20" maxlength="20"></p>
-    <p>
-        <input type="submit" value="Eliminar">
-    </p>
-    <p>
-        <input type="reset" value="Regresar">
-    </p>
+    <div>
+      <button>
+        <p>
+          <span>Eliminar</span>
+        </p>
+      </button>
+    </div>
+    <div>
+      <button>
+        <p>
+          <span>Regresar</span>
+        </p>
+      </button>
+    </div>
 </body>
 </html>
 

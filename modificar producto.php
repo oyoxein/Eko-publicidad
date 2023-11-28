@@ -19,15 +19,18 @@
     <p><input type="text" name="ingrese la descripción del producto" value="descripción" size="20" maxlength="20"></p>
     <p>Precio por unidad</p>
     <p><input type="text" name="ingrese el precio por unidad" value="precio por unidad" size="20" maxlength="20"></p>
-    <p>
-        <input type="reset" value="Regresar">
-    </p>
-    <p>
-        <input type="reset" value="Modificar">
-    </p>
-    <p>
-        <input type="submit" value="Eliminar">
-    </p>    
+    <div>
+      <button>
+        <p>
+          <span>Regresar</span>
+        </p>
+      </button>
+      <button>
+        <p>
+          <span>Modificar</span>
+        </p>
+      </button>
+    </div>
 
 </body>
 </html>

@@ -15,12 +15,20 @@
     <p><input type="text" name="Id producto"  value="Id producto" size="20" maxlength="20"></p>
     <p>Producto</p>
     <p><input type="text" name="ingrese el producto" value="ingrese el producto" size="20" maxlength="20"></p>
-    <p>
-        <input type="submit" value="Eliminar">
-    </p>
-    <p>
-        <input type="reset" value="Regresar">
-    </p>
+    <div>
+      <button>
+        <p>
+          <span>Eliminar</span>
+        </p>
+      </button>
+    </div>
+    <div>
+      <button>
+        <p>
+          <span>Regresar</span>
+        </p>
+      </button>
+    </div>
 </body>
 </html>
 

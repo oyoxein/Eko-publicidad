@@ -21,15 +21,18 @@
     <p><input type="text" name="precio por unidad" value="precio por unidad" size="20" maxlength="20"></p>
     <p>Cantidad de unidades</p>
     <p><input type="text" name="cantidad de unidades" value="cantidad de unidades" size="20" maxlength="20"></p>
-    <p>
-        <input type="reset" value="Regresar">
-    </p>
-    <p>
-        <input type="reset" value="Modificar">
-    </p>
-    <p>
-        <input type="submit" value="Eliminar">
-    </p>    
+    <div>
+      <button>
+        <p>
+          <span>Regresar</span>
+        </p>
+      </button>
+      <button>
+        <p>
+          <span>Modificar</span>
+        </p>
+      </button>
+    </div> 
 
 </body>
 </html>
