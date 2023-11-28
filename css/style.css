@@ -12,6 +12,7 @@ html {
 
 body{
     background-color: var(--primero);
+    text-align: center;
 
 }
 
@@ -42,7 +43,7 @@ p {
 
     color:var(--blanco);
     text-align: center;
-    font-size: 20px;
+    font-size: 50px;
 }
 img {
     width: 25%;
@@ -71,4 +72,33 @@ a {
 .navegación_enlace{
     color:var(--primero);
     font-size: 3rem;
+}
+button{
+    background:var(--primero);
+    width: 200px;
+    line-height: 2px;
+    padding: 10px;
+    border-color: var(--blanco);
+    border-width: 5px;
+    border-style: solid;
+    cursor: pointer;
+}
+button span {
+    background-color: var(--primero);
+    justify-content: center;
+    font-size: 30px;
+    text-align:center;
+    align-items: center;
+
+}
+div button {
+    margin-bottom: 15px;
+}
+input{
+    width: 300px;
+    background-color: var(--primero);
+    color: var(--blanco);
+    padding: 10px;
+    border-style: solid;
+    border-width: 5px;
 }
