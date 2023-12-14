@@ -7,7 +7,7 @@ function Conectar(){
     $password = "";
     $db = "ekopublicidad";
     
-    $conexion = new mysql($server,$user,$password,$db);
+    $conexion = new mysqli($server,$user,$password,$db);
 
     if($conexion->connect_errno){
         die("Conexión Fallida" . $conexion->connect_errno);
@@ -20,3 +20,4 @@ function Conectar(){
     
 
 }
+?>
