@@ -1,4 +1,24 @@
+<?php
+include('header.html');
+require 'conexionDB.php';
+try{
+    $db = new Database();
+    $con = $db->conectar();
+    $sql = $con->prepare("SELECT idFactura, idCliente, idProducto, precioUnidad, cantidad, total FROM factura");
+    $sql->execute();
+    $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+    if(isset($_SESSION['idUsuario'])){
+        $idUsuario = $_SESSION['idUsuario'];
+        $query = $con->prepare("SELECT idRol FROM usuario WHERE idUsuario = :idUsuario");
+        $query->bindParam(':idUsuario', $idUsuario);
+        $rolUsuario = $query->fetchColumn();
+
+    }
+}catch(PDOException $err){
+    echo "Error: " . $err->getMessage();
+}
+?>
 
     
 <!DOCTYPE html>
@@ -11,38 +31,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
-    <h1>FACTURACIÓN</h1>
-    <nav class="navegación">
-        <a class="navegación_enlace" href="cliente.php">Cliente</a>
-        <a class="navegación_enlace" href="ingresar.php">Ingresar</a>
-        <a class="navegación_enlace" href="producto.php">Producto</a>
-    </nav>
-    <p>Ingrese la facturación</p>
-    <p>ID Factura</p>
-    <p><input type="text" name="Id factura"  value="Id factura" size="20" maxlength="20"></p>
-    <p>ID Cliente</p>
-    <p><input type="text" name="Id cliente" value="Id cliente" size="20" maxlength="20"></p>
-    <p>ID Producto</p>
-    <p><input type="text" name="Id producto" value="Id producto" size="20" maxlength="20"></p>
-    <p>Precio por unidad</p>
-    <p><input type="number" name="Producto por unidad" value="Precio por unidad" size="20" maxlength="20"></p>
-    <p>Cantidad de unidades</p>
-    <p><input type="number" name="Cantidad de unidades" value="Unidades" size="20" maxlength="20"></p>
-    <p>
+    
+    <form action = "facturacion.php" method= "post">
+        <h1>Ingreso de Facturas</h1>
+        <h3>ID Factura</h3>
+        <input type="text" name="idFactura" placeholder="ID factura" size="20" maxlength="20"><br>
+        <h3>ID Cliente:</h3>
+        <input type="text" name="idCliente" placeholder="ID cliente" size="20" maxlength="20"><br>
+        <h3>ID Producto:</h3>
+        <input type="text" name="idProducto" placeholder="ID producto" size="20" maxlength="20"><br>
+        <h3>Precio por Producto:</h3>
+        <input type="number" name="precioUnidad" placeholder="Precio por unidad" size="20" maxlength="20"><br>
+        <h3>Cantidad de Productos</h3>
+        <input type="number" name="cantidad" placeholder="Unidades" size="20" maxlength="20"><br><br><br>
+        <h3>Total</h3>
+        <input type="number" name="total" placeholder="Total" size="20" maxlength="20"><br><br><br>
+        <input type="reset" value="Borrar Datos">
         <input type="submit" value="Ingresar">
-    </p>
-    <p>
-        <input type="reset" value="Regresar">
-    </p>
-    <p>
-        <input type="reset" value="Modificar">
-    </p>
-    <p>
-        <input type="submit" value="Eliminar">
-    </p>    
+
+    </form>
+
+    
 
 </body>
 </html>

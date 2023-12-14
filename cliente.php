@@ -1,3 +1,7 @@
+<?php
+include('header.html');
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -9,38 +13,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
-    <h1>CLIENTE</h1>
-    <p>Ingrese el cliente</p>
-    <nav class="navegación">
-        <a class="navegación_enlace" href="facturacion.php">Facturación</a>
-        <a class="navegación_enlace" href="ingresar.php">Ingresar</a>
-        <a class="navegación_enlace" href="producto.php">Producto</a>
-    </nav>
-    <p>ID Cliente</p>
-    <p><input type="text" name="Id cliente"  value="Id cliente" size="20" maxlength="20"></p>
-    <p>Nombre Cliente</p>
-    <p><input type="text" name="Nombre Cliente" value="Nombre" size="20" maxlength="20"></p>
-    <p>ID Dirección</p>
-    <p><input type="text" name="Id dirección" value="ID Dirección" size="20" maxlength="20"></p>
-    <p>Teléfono</p>
-    <p><input type="number" name="Teléfono" value="teléfono" size="20" maxlength="20"></p>
-    <p>Cantidad de unidades</p>
-    <p><input type="number" name="Cantidad de unidades" value="Unidades" size="20" maxlength="20"></p>
-    <p>
-        <input type="submit" value="Ingresar">
-    </p>
-    <p>
-        <input type="reset" value="Regresar">
-    </p>
-    <p>
-        <input type="reset" value="Modificar">
-    </p>
-    <p>
-        <input type="submit" value="Eliminar">
-    </p>    
+
+    <form class= "formulario" action = "cliente.php" method="post">
+        <h1>Ingresar Cliente</h1>
+        <h3>Nombre del Cliente</h3>
+        <input type="text" name="nombre" placeholder="Nombre" size="20" maxlength="20"><br>
+        <h3>Correo</h3>
+        <input type="text" name="correo" placeholder="Correo" size="20" maxlength="20"><br>
+        <h3>Teléfono</h3>
+        <input type="text" name="telefono" placeholder="Teléfono" size="20" maxlength="20"><br>
+        <h3>Contraseña</h3>
+        <input type="password" name="password" placeholder ="Contraseña"><br><br><br>
+        <input type="submit"  name="ingresar_cliente" value="Ingresar">
+    </form>
+
 
 </body>
 </html>

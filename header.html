@@ -1,9 +1,43 @@
 <header>
-    <img src="img/Publicidad imagen.jpg" alt="publicidad">
+    <img class="imagen_logo" src="img/Publicidad imagen.jpg" alt="publicidad"><br><br>
+    
     <nav class="navegación">
         
-        <a class="navegación_enlace" href="cliente.php">Cliente</a>
-        <a class="navegación_enlace" href="facturacion.php">Facturación</a>
-        <a class="navegación_enlace" href="ingresar.php">Ingresar</a>
+        <ul class="nav">
+            <li><a href="producto.php">Productos</a>
+                <ul class="dropdown_menu">
+                    <li><a class="dropdown_item" href="producto.php">Ver Productos</a></li>
+                    <li><a class="dropdown_item" href="modificarProducto.php">Modificar Producto</a></li>
+                    <li><a class="dropdown_item" href="ingresarProducto.php">Agregar Producto</a></li>
+                    <li><a class="dropdown_item" href="eliminar.php">Eliminar Producto</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cliente.php">Clientes</a>
+                <ul class="dropdown_menu">
+                    <li><a class="dropdown_item" href="modificarCliente.php">Modificar Cliente</a></li>
+                    <li><a class="dropdown_item" href="eliminarCliente.php">Eliminar Cliente</a></li>
+                    <li><a class="dropdown_item" href="cliente.php">Agregar Cliente</a></li>
+                </ul>
+            </li>
+
+            <li><a href="visualizarCotizacion.php">Cotizaciones</a>
+                <ul class="dropdown_menu">
+                    <li><a class="dropdown_item" href="modificarCotizacion.php">Modificar Cotizacion</a></li>
+                    <li><a class="dropdown_item" href="eliminarCotizacion.php">Eliminar Cotizacion</a></li>
+                    <li><a class="dropdown_item" href="visualizarCotizacion.php">Consultar Cotizacion</a></li>
+                </ul>
+            </li>
+
+            <li><a href="facturacion.php">Facturas</a>
+                <ul class="dropdown_menu">
+                    <li><a class="dropdown_item" href="modificarFacturacion.php">Modificar Factura</a></li>
+                    <li><a class="dropdown_item" href="eliminarFacturacion.php">Eliminar Factura</a></li>
+                    <li><a class="dropdown_item" href="facturacion.php">Agregar factura</a></li>
+                    <li><a class="dropdown_item" href="visualizarFactura.php">Consultar Factura</a></li>
+                </ul>
+            </li>
+        </ul>
+
     </nav>
 </header>
